@@ -656,7 +656,7 @@ button {
 
 .testimonials__image {
   position: absolute;
-  top: -16%;
+  top: -4rem;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
