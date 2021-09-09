@@ -1,0 +1,122 @@
+.header {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 4rem;
+    padding-bottom: 4.8rem;
+  
+
+    @include breakpoint-up(large){
+      align-items: baseline;
+      padding-top: 5.6rem;
+      padding-bottom: 9rem;
+    }
+
+    
+
+    &__logo {
+
+        img{
+            @include breakpoint-up(large){
+                scale: 1.2;
+            }
+        }
+        
+    }
+
+    &__toggle {
+
+        padding: 0.5rem;
+        z-index: 98;
+
+        span {
+            display: block;
+            width: 2.5rem;
+            height: 0.4rem;
+            background-color: $darkBlue;
+            transition: all 300ms ease-in-out;
+            transform-origin: 0.2rem 0.2rem;
+            
+            &:not(:last-child){
+                margin-bottom: 0.3rem;
+            }
+        }
+    }
+
+    &.open {
+        .header__toggle {
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+    
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+    
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }        
+    }
+}
+
+.nav {
+    position: absolute;
+    top: 10rem;
+    left:  50%;
+    transform: translateX(-50%);
+    min-height: 29.1rem;
+    width: calc(100% - 4.8rem);
+    padding-top: 4rem;
+    background-color: $white;
+    border-radius: 0.4rem;
+    z-index: 98;
+
+    @include breakpoint-up(large){
+        all: unset;
+    }
+
+    &__list {
+        text-align: center;
+        
+    }
+
+    &__items {
+
+        @include breakpoint-up(large){
+            display: inline;
+        }
+
+        &:not(:last-child){
+            @include breakpoint-up(large){
+                margin-right: 3.4rem;
+            }
+        }
+    }
+
+    &__links {
+        font-weight: 700;
+        color: $darkBlue;
+        line-height: 4.5rem;
+        transition: all 150ms ease-in-out;
+        &:hover {
+            color: $darkGrayishBlue;
+        }
+
+        @include breakpoint-up(large){
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+    }
+}
+
+.overlay {
+    
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.664));
+    z-index: 2;
+}

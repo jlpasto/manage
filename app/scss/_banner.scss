@@ -1,0 +1,60 @@
+.banner {
+    position: relative;
+    background-color: $brightRed;
+    padding-top: 10.5rem;
+    padding-bottom: 9rem;
+
+    @include breakpoint-up(large){
+        padding-top: 7rem;
+        padding-bottom: 6.3rem;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 19%;
+        width: 200rem;
+        height:40rem;
+        background-image: url("/images/bg-simplify-section-mobile.svg");
+        background-repeat: no-repeat;
+        
+
+
+        @include breakpoint-up(large){
+            top: -27%;
+            right: -57%;
+            height:40rem;
+            background-image: url("/images/bg-simplify-section-desktop.svg");
+            
+        
+        }
+    }
+
+    &__container {
+
+        text-align: center;
+
+        @include breakpoint-up(large){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+    }
+
+    &__heading {
+        font-size: 4rem;
+        color: $white;
+
+        @include breakpoint-up(large){
+            max-width: 50rem;
+        }
+    }
+
+    &__cta {
+        @include breakpoint-up(large){
+           
+         }
+    }
+
+}

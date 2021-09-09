@@ -1,0 +1,98 @@
+.hero {
+
+    &__container {
+        @include breakpoint-up(large){
+            display: flex;
+            align-items: center;
+            margin-bottom: 10rem;
+        }
+    }
+
+    &__image {
+
+        text-align: center;
+
+        @include breakpoint-up(large){
+            order: 2;
+            flex: 1;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+
+            @include breakpoint-up(medium){
+                width: 70%;
+            }
+
+            @include breakpoint-up(large){
+                width: 100%;
+            }
+        }
+    }
+
+    &__text {
+        
+        text-align: center;
+        padding-top: 1.6rem;
+        padding-bottom: 10.5rem;
+       
+
+        @include breakpoint-up(large){
+            order: 1;
+            flex: 1;
+            text-align: left;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+        
+        h1 {
+            margin-bottom: 1.5rem;
+
+            @include breakpoint-up(large){
+                margin-bottom: 3.5rem;
+            }
+        }
+
+        p {
+            
+            font-size: inherit;
+            padding-bottom: 3.2rem;
+            margin: 0 auto;
+            @include breakpoint-up(medium){
+                max-width: 50rem;
+                
+            }
+
+            @include breakpoint-up(large){
+                max-width: 34rem;
+                padding-bottom: 4rem;
+                margin: 0;
+            }
+
+        }
+    }
+}
+
+.bg-pattern {
+    content: "";
+    position: absolute;
+    top: -14%;
+    right: -41%;
+    background-image: url("/images/bg-tablet-pattern.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 47rem;
+    height: 47rem;
+    z-index: -99;
+    
+
+    @include breakpoint-up(large){
+        top: -13%;
+        right: -6%;
+        width: 75rem;
+        height: 75rem;
+    }
+
+
+}
